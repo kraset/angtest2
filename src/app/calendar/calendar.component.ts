@@ -20,13 +20,13 @@ export class CalendarComponent implements OnInit {
   }
 
   onSelect(event: any): void {
-    // console.log(event);
-    // this.selectedDate = event;
+    console.log(event);
+    this.selectedDate = event;
   }
 
+  // Prevent Sunday and booked days from being selected.
   myDateFilter(d: Date): boolean {
     const day = d.getDay();
-    // Prevent Saturday and Sunday from being selected.
     return day !== 0 && !this.isBooked(d);
   }
 
