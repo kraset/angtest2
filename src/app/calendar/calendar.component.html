@@ -1,0 +1,12 @@
+<h3>Material calendar</h3>
+
+<div class="calendar-wrapper">
+  <mat-calendar
+    #calendar
+    [(selected)]="selectedDate"
+    [minDate]="minDate"
+    [dateFilter]="myDateFilter.bind(this)"
+    (selectedChange)="onSelect($event)"
+  >
+  </mat-calendar>
+</div>
