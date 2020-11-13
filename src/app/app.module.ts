@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CalendarComponent } from './calendar/calendar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import { CalendarComponent } from './calendar/calendar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,         // for ngModel
     MatSliderModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
+    MatDatepickerModule, // for Calendar and datepicker
+    MatNativeDateModule, // for Calendar and datepicker
     BrowserAnimationsModule
   ],
   providers: [],

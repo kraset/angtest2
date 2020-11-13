@@ -2,10 +2,9 @@
 
 <div class="calendar-wrapper">
   <mat-calendar
-    #calendar
-    [(selected)]="selectedDate"
+    [selected]="selectedDate"
     [minDate]="minDate"
-    [dateFilter]="myDateFilter.bind(this)"
+    [dateClass]="dateClass()"
     (selectedChange)="onSelect($event)"
   >
   </mat-calendar>

@@ -1,4 +1,10 @@
 .calendar-wrapper {
-    background-color: rgb(255, 255, 255);
-    width: 300px;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+}
+
+::ng-deep .special-date {
+  background-color: rgb(209, 146, 146);
+  border-radius: 100%;
+  opacity: 50%;
 }
