@@ -1,0 +1,11 @@
+<div class="test1">
+  <button (click)="buttonClicked()">Increase valueX and person's age</button>
+  <p>This is child, valueX: {{ valueX }}, person age: {{ person.age }}</p>
+
+  <i>
+    Note: <br>
+    The input <strong>valueX</strong>  does not change in parent when changed in child - it's a primitive input value <br>
+    However, the value in the person-object changes, because it's a reference to the same object (same
+    space in memory).
+  </i>
+</div>
