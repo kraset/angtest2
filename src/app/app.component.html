@@ -1,15 +1,25 @@
-
 <div class="page">
+  <h1>The new awesome Angular 11 app.</h1>
 
-<h1>The new awesome Angular 11 app.</h1>
+  <p>New components will be tested here.</p>
+  <hr />
 
-New components will be tested here.
+  <h3>Pipe example</h3>
+  <p>
+    This is a calculation result with Pipe: {{ newPerson.name }},
+    {{ newPerson.age }}
+  </p>
+  <br />
 
-<h3>Material slider</h3>
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+  <h3>Material slider</h3>
+  <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
 
+  <app-calendar></app-calendar>
 
-<app-calendar></app-calendar>
+  <hr />
+  <h3>Test 1</h3>
+  <p>This is valueX in parent: {{ valueX }}, person age: {{ person.age }}</p>
+  <app-test1 [valueX]="valueX" [person]="person"></app-test1>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>

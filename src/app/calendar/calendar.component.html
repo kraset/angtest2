@@ -1,9 +1,12 @@
 <h3>Material calendar</h3>
 
 <div class="calendar-wrapper">
+
+  <!-- For DatePicker-input, we have to do myFilter.bind(this) -->
   <mat-calendar
     [selected]="selectedDate"
     [minDate]="minDate"
+    [dateFilter]="myFilter"
     [dateClass]="dateClass()"
     (selectedChange)="onSelect($event)"
   >
