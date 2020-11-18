@@ -8,6 +8,7 @@ import { Person } from './data/person';
 })
 export class AppComponent implements OnInit {
   title = 'Christians Play And Have Fun Angular Test 2';
+
   person = new Person('Anna', 20); // See how this changes in parent/child
   valueX = 0; // See how this changes in parent/child
   newPerson: Person = new Person('a', 2); // Use this for pipe example
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
     this.executePipeExample();
   }
 
-  // Definition of pipe
+  // Definition of our general pipe where the function takes 1 argument
   pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);
 
   add4(n: number): number {
