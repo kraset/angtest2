@@ -1,0 +1,17 @@
+.block1 {
+  display: flex;
+  width: 100%;
+  background-color: blue;
+
+  .block2 {
+    width: 66%;
+    max-width: 50rem;
+    background-color: red;
+  }
+
+  .block3 {
+    background-color: yellow;
+    max-width: 25rem;
+    width: 33%;
+  }
+}

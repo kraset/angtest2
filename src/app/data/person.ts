@@ -1,3 +1,4 @@
-export class Person{
-    constructor(public name: string, public age: number){}
+export class Person {
+  birthdate: Date;
+  constructor(public name: string, public age: number) {}
 }

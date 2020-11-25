@@ -1,0 +1,12 @@
+<div class="block1">
+  <!--
+    Using <ng-template> here will not affect the flex-layout, because it will not be an element in the DOM.
+    So... DON'T use <div *ngIf="true"> here, because the div will break the flex-layout!
+  -->
+  <ng-template [ngIf]="true">
+    <div class="block2">Big responsive block: width: 66%, max-size: 50rem</div>
+    <div class="block3">Smalller block with: 33%, max-size: 25rem</div>
+  </ng-template>
+</div>
+
+<p>Try to resize the window... The components keep their percentage ratio.</p>

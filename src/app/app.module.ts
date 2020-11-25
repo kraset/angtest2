@@ -9,14 +9,18 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FormsModule } from '@angular/forms';
 import { Test1Component } from './test1/test1.component';
+import { ResponsiveComponent } from './responsive/responsive.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
-    Test1Component
+    Test1Component,
+    ResponsiveComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,         // for ngModel
