@@ -11,13 +11,16 @@ import { FormsModule } from '@angular/forms';
 import { Test1Component } from './test1/test1.component';
 import { ResponsiveComponent } from './responsive/responsive.component';
 import { CommonModule } from '@angular/common';
+import { DragStuffComponent } from './drag-stuff/drag-stuff.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     Test1Component,
-    ResponsiveComponent
+    ResponsiveComponent,
+    DragStuffComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { CommonModule } from '@angular/common';
     MatSliderModule,
     MatDatepickerModule, // for Calendar and datepicker
     MatNativeDateModule, // for Calendar and datepicker
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

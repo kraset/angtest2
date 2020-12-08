@@ -1,0 +1,7 @@
+
+<p>Change order in this list by dragging these elements (imported: DragDropModule).</p>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div class="person" *ngFor="let person of persons" cdkDrag>
+    {{ person.name }}, {{ person.age }}
+  </div>
+</div>
