@@ -21,12 +21,25 @@ export class DragStuffComponent implements OnInit {
     'Stina',
     'Anna',
   ];
+
+  images: string[] = [
+    'assets/images/1.jpg',
+    'assets/images/2.jpg',
+    'assets/images/3.jpg',
+    'assets/images/4.jpg',
+  ];
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  drop(event: CdkDragDrop<Person[]>): void {
+  drop(event: CdkDragDrop<string[]>): void {
     moveItemInArray(this.persons, event.previousIndex, event.currentIndex);
   }
+
+  dropImage(event: CdkDragDrop<string[]>): void {
+    moveItemInArray(this.images, event.previousIndex, event.currentIndex);
+  }
+
 
 }

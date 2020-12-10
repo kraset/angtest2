@@ -1,7 +1,21 @@
+<p>
+  Change order in this list by dragging these elements (imported:
+  DragDropModule).
+</p>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  <div class="person" *ngFor="let item of items" cdkDrag>
+    {{ item }}
+  </div>
+</div>
 
-<p>Change order in this list by dragging these elements (imported: DragDropModule).</p>
 <div cdkDropList (cdkDropListDropped)="drop($event)">
   <div class="person" *ngFor="let person of persons" cdkDrag>
     {{ person.name }}, {{ person.age }}
+  </div>
+</div>
+
+<div class="image-container" cdkDropListOrientation="horizontal" cdkDropList (cdkDropListDropped)="dropImage($event)">
+  <div *ngFor="let image of images" cdkDrag>
+    <img src="{{ image }}" />
   </div>
 </div>
