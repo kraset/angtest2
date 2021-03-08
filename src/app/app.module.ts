@@ -13,6 +13,7 @@ import { ResponsiveComponent } from './responsive/responsive.component';
 import { CommonModule } from '@angular/common';
 import { DragStuffComponent } from './drag-stuff/drag-stuff.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FlexComponent } from './flex/flex.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CalendarComponent,
     Test1Component,
     ResponsiveComponent,
-    DragStuffComponent
+    DragStuffComponent,
+    FlexComponent
   ],
   imports: [
     CommonModule,
