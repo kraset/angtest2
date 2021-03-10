@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { Person } from '../data/person';
 
-const persons = [
+/*
+ * Faked backend API
+ */
+const PERSONS = [
   new Person('Kalle', 5),
   new Person('Stina', 39),
   new Person('Lars', 25),
@@ -16,7 +19,7 @@ export class BackendApiService {
   constructor() {}
 
   getPersonInfo(name: string): Observable<Person> {
-    const person = persons.find((p) => p.name === name);
+    const person = PERSONS.find((p) => p.name === name);
     if (person !== undefined) {
       return of(person);
     } else {

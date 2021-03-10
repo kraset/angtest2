@@ -3,13 +3,16 @@ import { forkJoin, Observable, of } from 'rxjs';
 import { Person } from '../data/person';
 import { BackendApiService } from './backend-api.service';
 
+/*
+ * A helper-service that can do N x API calls and merge them into one Observable or Promise
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class AppGlobalService {
   constructor(private backendApi: BackendApiService) {}
 
-  // Call the API N times and forkJoin the result into one Observable
+  // Call the API N times for each person name and forkJoin the result into one Observable
   getPersons(names: string[]): Observable<Person[]> {
     const observables = names.map((name) => {
       return this.backendApi.getPersonInfo(name);
