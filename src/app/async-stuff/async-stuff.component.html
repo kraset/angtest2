@@ -1,0 +1,10 @@
+<h4>Persons</h4>
+<p>
+  Fetch several persons with one service-call that (in turn) results in multiple
+  API calls. <br />
+  The multiple responses are synchronized and returned in one fork-join result from our
+  internal app-global-service:
+</p>
+<div *ngFor="let person of persons">
+  Name: {{ person.name }}, age: {{ person.age }}
+</div>

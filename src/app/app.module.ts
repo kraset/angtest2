@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { DragStuffComponent } from './drag-stuff/drag-stuff.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexComponent } from './flex/flex.component';
+import { AsyncStuffComponent } from './async-stuff/async-stuff.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FlexComponent } from './flex/flex.component';
     Test1Component,
     ResponsiveComponent,
     DragStuffComponent,
-    FlexComponent
+    FlexComponent,
+    AsyncStuffComponent
   ],
   imports: [
     CommonModule,
