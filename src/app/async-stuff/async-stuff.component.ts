@@ -13,33 +13,35 @@ const LIST_OF_PERSON_NAMES = ['Kalle', 'Stina', 'Anna', 'Lars'];
 })
 export class AsyncStuffComponent implements OnInit {
   persons: Person[] = [];
+  personsTransformed: Person[] = [];
+  personsWithPromise: Person[] = [];
   constructor(private applicationGlobals: AppGlobalService) {}
 
   ngOnInit(): void {
     // Fetch multiple persons
-    const useObservable = false;
 
-    if (useObservable) {
-      // Using observable with "subscribe"
-      this.applicationGlobals
-        .getPersons(LIST_OF_PERSON_NAMES)
-        // tslint:disable-next-line: deprecation
-        .subscribe(
-          (res) => (this.persons = res),
-          (error) => {
-            console.log(error);
-          }
-        );
-    }
-
-    if (!useObservable) {
-      // Using promise with "then"
-      this.applicationGlobals
-        .getPersonsV2(LIST_OF_PERSON_NAMES)
-        .then((res) => (this.persons = res))
-        .catch((error) => {
+    // Using observable with "subscribe"
+    this.applicationGlobals
+      .getPersons(LIST_OF_PERSON_NAMES)
+      // tslint:disable-next-line: deprecation
+      .subscribe(
+        (res) => (this.persons = res),
+        (error) => {
           console.log(error);
-        });
-    }
+        }
+      );
+
+    // Using promise with "then"
+    this.applicationGlobals
+      .getPersonsWithPromiseAll(LIST_OF_PERSON_NAMES)
+      .then((res) => (this.personsWithPromise = res))
+      .catch((error) => {
+        console.log(error);
+      });
+
+    this.applicationGlobals
+      .getPersonsTransformThenForkJoin(LIST_OF_PERSON_NAMES)
+      // tslint:disable-next-line: deprecation
+      .subscribe((res) => (this.personsTransformed = res));
   }
 }

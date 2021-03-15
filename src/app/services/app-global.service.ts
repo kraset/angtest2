@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { forkJoin, Observable, of } from 'rxjs';
 import { Person } from '../data/person';
 import { BackendApiService } from './backend-api.service';
+import { map } from 'rxjs/operators';
 
 /*
  * A helper-service that can do N x API calls and merge them into one Observable or Promise
@@ -20,7 +21,7 @@ export class AppGlobalService {
     return forkJoin(observables);
   }
 
-  getPersonsV2(names: string[]): Promise<Person[]> {
+  getPersonsWithPromiseAll(names: string[]): Promise<Person[]> {
     // Create API call for every name and convert them to promises...
     const promises = names.map((name) => {
       return this.backendApi.getPersonInfo(name).toPromise();
@@ -35,5 +36,28 @@ export class AppGlobalService {
       // Process the data: filter out all persons with age>=20!
       return persons.filter((p) => p.age >= 20);
     });
+  }
+
+  /*
+   * 1. Create one observable call for every name in the list of names.
+   * 2. Use pipe to apply a transform on the result from the reponse, adding +5 to age and converting name to upper case.
+   *    Note! Very important! During this transform, we still have access to the "name" variable
+   *    from the original map-call, so we can use it in the transform!
+   * 3. ForkJoin all the observables into one Observable.
+   *    Note: the API calls are not yet called.
+   *    For this to happen, we have to call subscribe on the forkJoin observable!
+   */
+  getPersonsTransformThenForkJoin(names: string[]): Observable<Person[]> {
+    const observables = names.map((name) => {
+      return this.backendApi
+        .getPersonInfo(name)
+        .pipe(
+          map(
+            (personObject: Person) =>
+              new Person(name.toUpperCase(), personObject.age + 5)
+          )
+        );
+    });
+    return forkJoin(observables);
   }
 }

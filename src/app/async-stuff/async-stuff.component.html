@@ -5,6 +5,17 @@
   The multiple responses are synchronized and returned in one fork-join result from our
   internal app-global-service:
 </p>
+<b>Get all persons with Observable forJoin</b>
 <div *ngFor="let person of persons">
+  Name: {{ person.name }}, age: {{ person.age }}
+</div>
+<br>
+<b>Get all persons with Promise.all</b>
+<div *ngFor="let person of personsWithPromise">
+  Name: {{ person.name }}, age: {{ person.age }}
+</div>
+<br>
+<b>Get all persons with Observable, transform each (capitalize name and add + 5 to age), then forkJoin</b>
+<div *ngFor="let person of personsTransformed">
   Name: {{ person.name }}, age: {{ person.age }}
 </div>
