@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class AppGlobalService {
+export class HelperService {
   constructor(private backendApi: BackendApiService) {}
 
   // Call the API N times for each person name and forkJoin the result into one Observable

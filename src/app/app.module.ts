@@ -15,6 +15,9 @@ import { DragStuffComponent } from './drag-stuff/drag-stuff.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexComponent } from './flex/flex.component';
 import { AsyncStuffComponent } from './async-stuff/async-stuff.component';
+import { SubjectComponent } from './subject/subject.component';
+import { Child1Component } from './subject/child1/child1.component';
+import { EditPersonComponent } from './subject/edit-person/edit-person.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { AsyncStuffComponent } from './async-stuff/async-stuff.component';
     ResponsiveComponent,
     DragStuffComponent,
     FlexComponent,
-    AsyncStuffComponent
+    AsyncStuffComponent,
+    SubjectComponent,
+    Child1Component,
+    EditPersonComponent
   ],
   imports: [
     CommonModule,
