@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pet, PetStoreApiService } from '../services/petstore-api.service';
+import { Pet, PetStoreApiService } from '../../data/services/petstore-api.service';
 
 @Component({
   selector: 'app-pet-store',

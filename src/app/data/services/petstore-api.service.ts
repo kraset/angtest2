@@ -463,7 +463,7 @@ export class PetStoreApiService {
 
     /**
      * Deletes a pet
-     * @param api_key (optional) 
+     * @param api_key (optional)
      * @param petId Pet id to delete
      */
     deletePet(api_key: string | null | undefined, petId: number): Observable<void> {
@@ -1223,7 +1223,7 @@ export class ApiResponse implements IApiResponse {
         data["code"] = this.code;
         data["type"] = this.type;
         data["message"] = this.message;
-        return data; 
+        return data;
     }
 }
 
@@ -1264,7 +1264,7 @@ export class Category implements ICategory {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
         data["name"] = this.name;
-        return data; 
+        return data;
     }
 }
 
@@ -1336,7 +1336,7 @@ export class Pet implements IPet {
                 data["tags"].push(item.toJSON());
         }
         data["status"] = this.status;
-        return data; 
+        return data;
     }
 }
 
@@ -1381,7 +1381,7 @@ export class Tag implements ITag {
         data = typeof data === 'object' ? data : {};
         data["id"] = this.id;
         data["name"] = this.name;
-        return data; 
+        return data;
     }
 }
 
@@ -1434,7 +1434,7 @@ export class Order implements IOrder {
         data["shipDate"] = this.shipDate ? this.shipDate.toISOString() : <any>undefined;
         data["status"] = this.status;
         data["complete"] = this.complete;
-        return data; 
+        return data;
     }
 }
 
@@ -1498,7 +1498,7 @@ export class User implements IUser {
         data["password"] = this.password;
         data["phone"] = this.phone;
         data["userStatus"] = this.userStatus;
-        return data; 
+        return data;
     }
 }
 

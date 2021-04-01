@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../data/person';
-import { HelperService } from '../services/helper.service';
+import { Person } from '../../data/person';
+import { HelperService } from '../../shared/helper.service';
 
 // Note: if we add a non-existing name in LIST_OF_PERSON_NAMES,
 // the forJoin/Promise.all will fail and nothing is returned except an error log.

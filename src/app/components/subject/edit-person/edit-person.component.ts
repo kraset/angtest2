@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from 'src/app/data/person';
-import { GlobalDataService } from 'src/app/services/global-data.service';
+import { GlobalDataService } from 'src/app/shared/global-data.service';
 
 @Component({
   selector: 'app-edit-person',

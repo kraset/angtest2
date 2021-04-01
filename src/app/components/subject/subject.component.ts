@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalDataService } from '../services/global-data.service';
+import { GlobalDataService } from 'src/app/shared/global-data.service';
 
 @Component({
   selector: 'app-subject',
