@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable, of } from 'rxjs';
 import { Person } from '../data/person';
-import { BackendApiService } from './backend-api.service';
+import { PersonApiService } from '../data/services/person-api.service';
 import { map } from 'rxjs/operators';
 
 /*
@@ -10,8 +10,8 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class HelperService {
-  constructor(private backendApi: BackendApiService) {}
+export class PersonHelperService {
+  constructor(private backendApi: PersonApiService) {}
 
   // Call the API N times for each person name and forkJoin the result into one Observable
   getPersons(names: string[]): Observable<Person[]> {

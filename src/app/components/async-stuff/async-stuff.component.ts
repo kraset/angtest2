@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from '../../data/person';
-import { HelperService } from '../../shared/helper.service';
+import { PersonHelperService } from '../../shared/person-helper.service';
 
 // Note: if we add a non-existing name in LIST_OF_PERSON_NAMES,
 // the forJoin/Promise.all will fail and nothing is returned except an error log.
@@ -15,7 +15,7 @@ export class AsyncStuffComponent implements OnInit {
   persons: Person[] = [];
   personsTransformed: Person[] = [];
   personsWithPromise: Person[] = [];
-  constructor(private applicationGlobals: HelperService) {}
+  constructor(private applicationGlobals: PersonHelperService) {}
 
   ngOnInit(): void {
     // Fetch multiple persons

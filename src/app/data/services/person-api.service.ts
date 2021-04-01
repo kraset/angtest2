@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { Person } from '../data/person';
+import { Person } from '../person';
 
 /*
  * Faked backend API
@@ -15,7 +15,7 @@ const PERSONS = [
 @Injectable({
   providedIn: 'root',
 })
-export class BackendApiService {
+export class PersonApiService {
   constructor() {}
 
   getPersonInfo(name: string): Observable<Person> {
