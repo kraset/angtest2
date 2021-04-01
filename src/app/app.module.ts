@@ -18,6 +18,13 @@ import { AsyncStuffComponent } from './async-stuff/async-stuff.component';
 import { SubjectComponent } from './subject/subject.component';
 import { Child1Component } from './subject/child1/child1.component';
 import { EditPersonComponent } from './subject/edit-person/edit-person.component';
+import { API_BASE_URL } from './services/petstore-api.service';
+import { PetStoreComponent } from './pet-store/pet-store.component';
+import { HttpClientModule } from '@angular/common/http';
+
+export function getBaseUrl(): string {
+  return 'https://petstore.swagger.io/v2';
+}
 
 @NgModule({
   declarations: [
@@ -30,7 +37,8 @@ import { EditPersonComponent } from './subject/edit-person/edit-person.component
     AsyncStuffComponent,
     SubjectComponent,
     Child1Component,
-    EditPersonComponent
+    EditPersonComponent,
+    PetStoreComponent
   ],
   imports: [
     CommonModule,
@@ -42,8 +50,14 @@ import { EditPersonComponent } from './subject/edit-person/edit-person.component
     MatNativeDateModule, // for Calendar and datepicker
     BrowserAnimationsModule,
     DragDropModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: API_BASE_URL,
+      useFactory: getBaseUrl
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

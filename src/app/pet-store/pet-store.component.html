@@ -1,0 +1,12 @@
+This component reads data from a Backend API here: <br>
+<a href="https://petstore.swagger.io/">https://petstore.swagger.io/</a>
+<br><br>
+The code uses the NSwag generated class <b>PetStoreApiService</b>. <br>
+This singleton object is injected into this component so we can call methods like getPetById() to read out pet information.<br>
+<br>
+
+<ng-container *ngIf="pet">
+    Pet id: {{pet.id}} <br>
+    Pet name: {{pet.name}} <br>
+</ng-container>
+
