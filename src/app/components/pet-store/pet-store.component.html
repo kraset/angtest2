@@ -1,12 +1,25 @@
-This component reads data from a Backend API here: <br>
+This component reads data from a Backend API here: <br />
 <a href="https://petstore.swagger.io/">https://petstore.swagger.io/</a>
-<br><br>
-The code uses the NSwag generated class <b>PetStoreApiService</b>. <br>
-This singleton object is injected into this component so we can call methods like getPetById() to read out pet information.<br>
-<br>
+<br /><br />
+The code uses the NSwag generated class <b>PetStoreApiService</b>. <br />
+This singleton object is injected into this component so we can call methods
+like getPetById() to read out pet information.<br />
+<br />
 
-<ng-container *ngIf="pet">
-    Pet id: {{pet.id}} <br>
-    Pet name: {{pet.name}} <br>
+<ng-container *ngIf="!isLoading()">
+  <div *ngFor="let pet of pets">
+    Pet Id: {{ pet.id }},
+    Name: {{ pet.name }} <br />
+  </div>
+  <br />
+  <br />
+  <label for="id">id: </label>
+  <input type="text" name="id" />
+  <br />
+  <br />
+  <label for="name">Nytt namn: </label>
+  <input type="text" name="name" />
+  <br />
+  <br />
+  <button type="button">Uppdate pet with new name</button>
 </ng-container>
-
