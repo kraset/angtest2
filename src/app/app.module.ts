@@ -21,7 +21,6 @@ import { API_BASE_URL } from './data/services/petstore-api.service';
 import { PetStoreComponent } from './components/pet-store/pet-store.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SubjectComponent } from './components/subject/subject.component';
-import { Test6Component } from './test6/test6.component';
 
 export function getBaseUrl(): string {
   return 'https://petstore.swagger.io/v2';
@@ -40,7 +39,6 @@ export function getBaseUrl(): string {
     Child1Component,
     EditPersonComponent,
     PetStoreComponent,
-    Test6Component
   ],
   imports: [
     CommonModule,

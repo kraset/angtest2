@@ -18,24 +18,22 @@ export class PetStoreComponent implements OnInit {
 
   ngOnInit(): void {
     for (let i = 0; i < MAX_PETS; i++) {
-      this.petStoreApiService
-        .getPetById(i + 1)
-        .subscribe((petFromResponse: Pet) => {
+      this.petStoreApiService.getPetById(i + 1).subscribe(
+        (petFromResponse: Pet) => {
           this.pets.push(petFromResponse);
           console.log(petFromResponse);
           this.loaded++;
         },
-        (error) =>
-        {
-          console.log('Could not find pet with id: ', i+1);
+        (error) => {
+          console.log('Could not find pet with id: ', i + 1);
           this.loaded++;
-        });
+        }
+      );
     }
     // this.petStoreApiService.updatePet(this.pet);
   }
 
-  isLoading(){
+  isLoading(): boolean {
     return this.loaded < MAX_PETS;
   }
-
 }
