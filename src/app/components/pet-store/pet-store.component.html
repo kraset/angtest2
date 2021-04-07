@@ -8,18 +8,19 @@ like getPetById() to read out pet information.<br />
 
 <ng-container *ngIf="!isLoading()">
   <div *ngFor="let pet of pets">
-    Pet Id: {{ pet.id }},
-    Name: {{ pet.name }} <br />
+    Pet Id: {{ pet.id }}, Name: {{ pet.name }} <br />
   </div>
   <br />
   <br />
   <label for="id">id: </label>
-  <input type="text" name="id" />
+  <input [(ngModel)]="petId" type="number" name="id" />
   <br />
   <br />
   <label for="name">Nytt namn: </label>
-  <input type="text" name="name" />
+  <input [(ngModel)]="petName" type="text" name="name" />
   <br />
   <br />
-  <button type="button">Uppdate pet with new name</button>
+  <button type="button" (click)="onClickUpdatePet()">
+    Uppdate pet with new name
+  </button>
 </ng-container>

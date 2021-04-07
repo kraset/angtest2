@@ -13,6 +13,8 @@ const MAX_PETS = 10;
 export class PetStoreComponent implements OnInit {
   pets: Pet[] = [];
   loaded = 0;
+  petName?: string = undefined;
+  petId?: number = undefined;
 
   constructor(private petStoreApiService: PetStoreApiService) {}
 
@@ -30,10 +32,24 @@ export class PetStoreComponent implements OnInit {
         }
       );
     }
-    // this.petStoreApiService.updatePet(this.pet);
   }
 
   isLoading(): boolean {
     return this.loaded < MAX_PETS;
+  }
+
+  onClickUpdatePet(): void {
+    if (this.petName && this.petId) {
+      const pet = this.pets.find((p) => p.id === this.petId);
+      if (pet) {
+        pet.name = this.petName;
+        this.petStoreApiService.updatePet(pet).subscribe(
+          () => {},
+          (error) => {
+            console.log(error);
+          }
+        );
+      }
+    }
   }
 }
