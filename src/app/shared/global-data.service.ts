@@ -8,7 +8,7 @@ import { Person } from '../data/person';
 @Injectable({
   providedIn: 'root',
 })
-export class GlobalDataService {
+export class GlobalDataStoreService {
   // Shared global data
   person: Person = new Person('Ragnar', 12);
 

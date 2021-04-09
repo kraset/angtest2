@@ -3,14 +3,15 @@
     The outermost component wants to know about Person-changes from Grand Child.
     <br />
     But we want to avoid emitting through the middle child. <br />
-    Use a shared global data service that contains a subject <strong>personUpdateEvent</strong> to subscribe
-    to.<br />
-    - Subscribe on changes to reflect in the title if the person is/was updated.<br>
+    Use a shared global data service that contains a subject
+    <strong>personUpdateEvent</strong> to subscribe to.<br />
+    - Subscribe on changes to reflect in the title if the person is/was
+    updated.<br />
     - The actual person data is shared.<br />
   </p>
 
   Person name: <strong>{{ globalDataService.person.name }}</strong>
   <em *ngIf="updateInfoText !== undefined"> ({{ updateInfoText }}) </em>
 
-  <app-child1></app-child1>
+  <app-middle-child></app-middle-child>
 </div>

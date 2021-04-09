@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person } from 'src/app/data/person';
-import { GlobalDataService } from 'src/app/shared/global-data.service';
+import { GlobalDataStoreService } from 'src/app/shared/global-data.service';
 
 @Component({
   selector: 'app-edit-person',
@@ -10,7 +10,7 @@ import { GlobalDataService } from 'src/app/shared/global-data.service';
 export class EditPersonComponent implements OnInit {
   name = '';
 
-  constructor(public globalDataService: GlobalDataService) {}
+  constructor(public globalDataService: GlobalDataStoreService) {}
 
   ngOnInit(): void {}
 

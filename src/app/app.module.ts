@@ -15,12 +15,12 @@ import { DragStuffComponent } from './components/drag-stuff/drag-stuff.component
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexComponent } from './components/flex/flex.component';
 import { AsyncStuffComponent } from './components/async-stuff/async-stuff.component';
-import { Child1Component } from './components/subject/child1/child1.component';
-import { EditPersonComponent } from './components/subject/edit-person/edit-person.component';
+import { MiddleChildComponent } from './components/subject/middle-child/middle-child.component';
+import { EditPersonComponent } from './components/subject/middle-child/edit-person/edit-person.component';
 import { API_BASE_URL } from './data/services/petstore-api.service';
 import { PetStoreComponent } from './components/pet-store/pet-store.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SubjectComponent } from './components/subject/subject.component';
+import { GrandParentComponent } from './components/subject/grand-parent.component';
 
 export function getBaseUrl(): string {
   return 'https://petstore.swagger.io/v2';
@@ -35,8 +35,8 @@ export function getBaseUrl(): string {
     DragStuffComponent,
     FlexComponent,
     AsyncStuffComponent,
-    SubjectComponent,
-    Child1Component,
+    GrandParentComponent,
+    MiddleChildComponent,
     EditPersonComponent,
     PetStoreComponent,
   ],

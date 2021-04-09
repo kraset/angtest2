@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubjectComponent } from './subject.component';
+import { GrandParentComponent } from './grand-parent.component';
 
 describe('SubjectComponent', () => {
-  let component: SubjectComponent;
-  let fixture: ComponentFixture<SubjectComponent>;
+  let component: GrandParentComponent;
+  let fixture: ComponentFixture<GrandParentComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubjectComponent ]
+      declarations: [ GrandParentComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SubjectComponent);
+    fixture = TestBed.createComponent(GrandParentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

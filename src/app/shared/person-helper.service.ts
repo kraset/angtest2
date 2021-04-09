@@ -11,12 +11,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PersonHelperService {
-  constructor(private backendApi: PersonApiService) {}
+  constructor(private personApiService: PersonApiService) {}
 
   // Call the API N times for each person name and forkJoin the result into one Observable
   getPersons(names: string[]): Observable<Person[]> {
     const observables = names.map((name) => {
-      return this.backendApi.getPersonInfo(name);
+      return this.personApiService.getPersonInfo(name);
     });
     return forkJoin(observables);
   }
@@ -24,7 +24,7 @@ export class PersonHelperService {
   getPersonsWithPromiseAll(names: string[]): Promise<Person[]> {
     // Create API call for every name and convert them to promises...
     const promises = names.map((name) => {
-      return this.backendApi.getPersonInfo(name).toPromise();
+      return this.personApiService.getPersonInfo(name).toPromise();
     });
     // Force all promises to resolve as one promise...
 
@@ -49,7 +49,7 @@ export class PersonHelperService {
    */
   getPersonsTransformThenForkJoin(names: string[]): Observable<Person[]> {
     const observables = names.map((name) => {
-      return this.backendApi
+      return this.personApiService
         .getPersonInfo(name)
         .pipe(
           map(

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalDataStoreService } from 'src/app/shared/global-data.service';
 import { Person } from '../../data/person';
 import { PersonHelperService } from '../../shared/person-helper.service';
 
@@ -15,13 +16,13 @@ export class AsyncStuffComponent implements OnInit {
   persons: Person[] = [];
   personsTransformed: Person[] = [];
   personsWithPromise: Person[] = [];
-  constructor(private applicationGlobals: PersonHelperService) {}
+  constructor(private personHelperService: PersonHelperService) {}
 
   ngOnInit(): void {
     // Fetch multiple persons
 
     // Using observable with "subscribe"
-    this.applicationGlobals
+    this.personHelperService
       .getPersons(LIST_OF_PERSON_NAMES)
       // tslint:disable-next-line: deprecation
       .subscribe(
@@ -32,14 +33,14 @@ export class AsyncStuffComponent implements OnInit {
       );
 
     // Using promise with "then"
-    this.applicationGlobals
+    this.personHelperService
       .getPersonsWithPromiseAll(LIST_OF_PERSON_NAMES)
       .then((res) => (this.personsWithPromise = res))
       .catch((error) => {
         console.log(error);
       });
 
-    this.applicationGlobals
+    this.personHelperService
       .getPersonsTransformThenForkJoin(LIST_OF_PERSON_NAMES)
       // tslint:disable-next-line: deprecation
       .subscribe((res) => (this.personsTransformed = res));

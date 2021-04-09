@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalDataService } from 'src/app/shared/global-data.service';
+import { GlobalDataStoreService } from 'src/app/shared/global-data.service';
 
 @Component({
-  selector: 'app-subject',
-  templateUrl: './subject.component.html',
-  styleUrls: ['./subject.component.scss'],
+  selector: 'app-grand-parent',
+  templateUrl: './grand-parent.component.html',
+  styleUrls: ['./grand-parent.component.scss'],
 })
-export class SubjectComponent implements OnInit {
+export class GrandParentComponent implements OnInit {
   isUpdated?: boolean = undefined;
   updateInfoText?: string = undefined;
-  constructor(public globalDataService: GlobalDataService) {}
+  constructor(public globalDataService: GlobalDataStoreService) {}
 
   ngOnInit(): void {
     this.globalDataService.personUpdateEvent.subscribe((updated) => {

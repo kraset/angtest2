@@ -4,31 +4,29 @@
   <p>New components and experiments will be tested here.</p>
   <hr />
 
-
   <h3>Pet Store</h3>
   <app-pet-store></app-pet-store>
-  <hr>
+  <hr />
 
   <h3>Test subscription on subject</h3>
-  <app-subject></app-subject>
-  <hr>
-
+  <app-grand-parent></app-grand-parent>
+  <hr />
 
   <h3>Aync stuff with rxjs, subscribe, observables, promises</h3>
   <app-async-stuff></app-async-stuff>
-  <hr>
+  <hr />
 
   <h3>Flex rows</h3>
   <app-flex></app-flex>
-  <hr>
+  <hr />
 
   <h3>List with drag-n-drop elements</h3>
   <app-drag-stuff></app-drag-stuff>
-  <hr>
+  <hr />
 
   <h3>Responsive sizing</h3>
   <app-responsive></app-responsive>
-  <hr>
+  <hr />
 
   <h3>Pipe example</h3>
   <p>
@@ -44,7 +42,10 @@
 
   <hr />
   <h3>Test 1</h3>
-  <p>This is valueX in parent: {{ valueX }}, person age: {{ person.age }}, person birthdate: {{ person.birthdate | date: 'yyyy-MM-dd'}}</p>
+  <p>
+    This is valueX in parent: {{ valueX }}, person age: {{ person.age }}, person
+    birthdate: {{ person.birthdate | date: "yyyy-MM-dd" }}
+  </p>
   <app-test1 [valueX]="valueX" [person]="person"></app-test1>
 
   <router-outlet></router-outlet>
