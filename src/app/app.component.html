@@ -1,52 +1,27 @@
 <div class="page">
-  <h1>The new awesome Angular 11 app.</h1>
+  <h1>Christian's Angular 11 Examples App</h1>
 
   <p>New components and experiments will be tested here.</p>
   <hr />
 
-  <h3>Pet Store</h3>
-  <app-pet-store></app-pet-store>
+  <nav>
+    <ul>
+      <li><a routerLink="/basic-examples" routerLinkActive="active">Basic Examples</a></li>
+      <li><a routerLink="/pet-store" routerLinkActive="active">Pet Store</a></li>
+      <li><a routerLink="/flex" routerLinkActive="active">Flexbox tests</a></li>
+      <li><a routerLink="/responsive" routerLinkActive="active">Responsive sizing</a></li>
+      <li><a routerLink="/async" routerLinkActive="active">Async Tests</a></li>
+      <li><a routerLink="/subject" routerLinkActive="active">Test RxJS Subject</a></li>
+      <li><a routerLink="/calendar" routerLinkActive="active">Material Calendar</a></li>
+      <li><a routerLink="/dragdrop" routerLinkActive="active">Drag-n-Drop</a></li>
+    </ul>
+  </nav>
+
+  <em>Below is the router outlet:</em>
   <hr />
-
-  <h3>Test subscription on subject</h3>
-  <app-grand-parent></app-grand-parent>
-  <hr />
-
-  <h3>Aync stuff with rxjs, subscribe, observables, promises</h3>
-  <app-async-stuff></app-async-stuff>
-  <hr />
-
-  <h3>Flex rows</h3>
-  <app-flex></app-flex>
-  <hr />
-
-  <h3>List with drag-n-drop elements</h3>
-  <app-drag-stuff></app-drag-stuff>
-  <hr />
-
-  <h3>Responsive sizing</h3>
-  <app-responsive></app-responsive>
-  <hr />
-
-  <h3>Pipe example</h3>
-  <p>
-    This is a calculation result with Pipe: {{ newPerson.name }},
-    {{ newPerson.age }}
-  </p>
-  <br />
-
-  <h3>Material slider</h3>
-  <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-
-  <app-calendar></app-calendar>
-
-  <hr />
-  <h3>Test 1</h3>
-  <p>
-    This is valueX in parent: {{ valueX }}, person age: {{ person.age }}, person
-    birthdate: {{ person.birthdate | date: "yyyy-MM-dd" }}
-  </p>
-  <app-test1 [valueX]="valueX" [person]="person"></app-test1>
 
   <router-outlet></router-outlet>
+
+  <hr />
+
 </div>

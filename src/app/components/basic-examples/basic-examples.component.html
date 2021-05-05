@@ -1,0 +1,18 @@
+<h3>Basic Examples</h3>
+
+<h4>Pipe</h4>
+<p>
+  This is a calculation result with Pipe: {{ newPerson.name }},
+  {{ newPerson.age }}
+</p>
+
+<h4>Material slider</h4>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
+<h4>Test Property in Child</h4>
+<p>
+  This is valueX in parent: {{ valueX }}, person age: {{ person.age }}, person
+  birthdate: {{ person.birthdate | date: "yyyy-MM-dd" }}
+</p>
+<app-test1 [valueX]="valueX" [person]="person"></app-test1>
+
