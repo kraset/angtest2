@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalDataStoreService } from 'src/app/shared/global-data.service';
-import { Person } from '../../data/person';
+import { Person } from '../../data/model/person';
 import { PersonHelperService } from '../../shared/person-helper.service';
 
 // Note: if we add a non-existing name in LIST_OF_PERSON_NAMES,

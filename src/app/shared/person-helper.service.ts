@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable, of } from 'rxjs';
-import { Person } from '../data/person';
+import { Person } from '../data/model/person';
 import { PersonApiService } from '../data/services/person-api.service';
 import { map } from 'rxjs/operators';
 

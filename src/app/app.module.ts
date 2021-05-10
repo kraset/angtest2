@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Test1Component } from './components/test1/test1.component';
 import { ResponsiveComponent } from './components/responsive/responsive.component';
 import { CommonModule } from '@angular/common';
@@ -23,6 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { GrandParentComponent } from './components/subject/grand-parent.component';
 import { TestTableComponent } from './components/test-table/test-table.component';
 import { BasicExamplesComponent } from './components/basic-examples/basic-examples.component';
+import { GameClientComponent } from './components/more-rxjs/game-client.component';
+import { HeroComponent } from './shared/hero/hero.component';
+import { GameServerMockComponent } from './components/more-rxjs/server-mock/server-mock.component';
+import { VerifyInputComponent } from './components/verify-input/verify-input.component';
+import { TwoDigitDecimaNumberDirective } from './shared/two-decimal.directive';
 
 export function getBaseUrl(): string {
   return 'https://petstore.swagger.io/v2';
@@ -43,6 +48,11 @@ export function getBaseUrl(): string {
     PetStoreComponent,
     TestTableComponent,
     BasicExamplesComponent,
+    GameClientComponent,
+    HeroComponent,
+    GameServerMockComponent,
+    VerifyInputComponent,
+    TwoDigitDecimaNumberDirective,
   ],
   imports: [
     CommonModule,
@@ -55,6 +65,7 @@ export function getBaseUrl(): string {
     BrowserAnimationsModule,
     DragDropModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

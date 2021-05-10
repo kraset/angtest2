@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Person } from '../data/person';
+import { Person } from '../data/model/person';
 
 /*
  * A global data service that holds the data. Other components can subscribe to subject that data has been updated.

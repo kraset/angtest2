@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/data/person';
+import { Person } from 'src/app/data/model/person';
 import { GlobalDataStoreService } from 'src/app/shared/global-data.service';
 
 @Component({

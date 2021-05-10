@@ -1,0 +1,15 @@
+<div class="page">
+  <h3>Game Server with RxJS: Subject, Stream, Transforms</h3>
+
+  <div class="game-client">
+    <h3>Game Client - List of Heroes</h3>
+    <div class="more-rxjs" *ngIf="heroes">
+      <app-hero [hero]="hero" *ngFor="let hero of heroes"></app-hero>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <br />
+
+  <app-server-mock></app-server-mock>
+</div>
