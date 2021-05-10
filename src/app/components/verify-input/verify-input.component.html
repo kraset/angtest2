@@ -5,11 +5,11 @@
 <input type="number">
 
 <h4>Pattern regexp, accepts only special pattern, Swedish car reg numbers: "abc 123" or "ABC 123" </h4>
-<input [formControl]="username" type="text" [pattern]="unamePattern">
+<input [formControl]="carRegNr" type="text" [pattern]="carRegNrPattern">
 
-<div *ngIf="username.errors?.pattern">
-    User name not valid.
+<div *ngIf="carRegNr.errors?.pattern">
+    Car registration number is not valid.
 </div>
 
-<h4>Two digit number directive</h4>
+<h4>Two digit number directive (note: not working properly yet...)</h4>
 <input class="docs-form-control" type="number" appTwoDigitDecimaNumber />

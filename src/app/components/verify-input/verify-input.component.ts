@@ -9,8 +9,8 @@ import { FormControl } from '@angular/forms';
 export class VerifyInputComponent implements OnInit {
 
   // Swedish car reg numbers: "abc 123" or "ABC 123"
-  unamePattern = '([a-z]|[A-Z]){3}\\s\\d{3}';
-  username = new FormControl();
+  carRegNrPattern = '([a-z]|[A-Z]){3}\\s\\d{3}';
+  carRegNr = new FormControl();
 
   constructor() { }
 
