@@ -1,6 +1,7 @@
-<div *ngIf="hero" class="person" [ngClass]="isAlive() ? 'bg-live' : 'bg-dead'">
+<div *ngIf="hero" class="person" [ngClass]="getStylingColors()">
+  <img class="img-responsive" src="{{imagePath}}">
   <p><b>Name:</b> {{ hero.name }}</p>
-  <p><b>Gold:</b> {{ hero.gold }}</p>
+  <p><b>Team:</b> {{ hero.team }}</p>
   <p *ngIf="isAlive()"><b>Hitpoints:</b> {{ hero.hitpoints }}</p>
   <p *ngIf="!isAlive()"><em>(Dead)</em></p>
 </div>

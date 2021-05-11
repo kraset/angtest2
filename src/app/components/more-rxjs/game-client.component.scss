@@ -1,12 +1,23 @@
-.more-rxjs {
+.flex-row{
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(149, 178, 213);
+}
+
+.hero-box {
+  background-color: rgb(213, 224, 238);
   padding: 20px;
 }
 
+.button-bar{
+  margin-bottom: 20px;
+}
+
+button{
+  margin-right: 20px;
+}
+
 .game-client{
-  background-color: rgb(231, 159, 233);
-  width: 50%;
+  background-color: rgb(206, 201, 206);
+  width: 900px;
   padding: 10px;
 }

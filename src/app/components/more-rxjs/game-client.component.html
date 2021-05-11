@@ -1,9 +1,22 @@
 <div class="page">
   <h3>Game Server with RxJS: Subject, Stream, Transforms</h3>
 
+  <div class="button-bar flex-row">
+    <button (click)="getTeam1()">getTeam1</button>
+    <button (click)="getTeam2()">getTeam2</button>
+    <button (click)="runFrom()">from(array)</button>
+    <button (click)="runOf()">of(wholeArray)</button>
+    <button (click)="clear()">clear</button>
+    <button (click)="runMerge()">merge</button>
+    <button (click)="runConcat()">concat</button>
+    <button (click)="runForkJoin()">forkJoin</button>
+    <button (click)="runRace()">race</button>
+    <button (click)="getSelectedCreatures()">getSelected</button>
+  </div>
+
   <div class="game-client">
     <h3>Game Client - List of Heroes</h3>
-    <div class="more-rxjs" *ngIf="heroes">
+    <div class="hero-box flex-row" *ngIf="heroes">
       <app-hero [hero]="hero" *ngFor="let hero of heroes"></app-hero>
     </div>
   </div>

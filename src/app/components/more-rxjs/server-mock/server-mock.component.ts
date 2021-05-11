@@ -11,20 +11,11 @@ import { GameServerService } from 'src/app/data/services/game-server.service';
 export class GameServerMockComponent implements OnInit {
   constructor(private gameServerService: GameServerService) {}
 
-  creatures = [
-    new Creature('Knight', 85),
-    new Creature('Bowman', 25),
-    new Creature('Soldier', 32),
-    new Creature('Priest', 90),
-  ];
-  index = 0;
 
   ngOnInit(): void {}
 
   onClickAddCreature(): void {
-    if (this.index < this.creatures.length) {
-      this.gameServerService.addCreature(this.creatures[this.index++]);
-    }
+    this.gameServerService.addCreature();
   }
 
   onClickTogglePoison(): void {

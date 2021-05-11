@@ -3,7 +3,7 @@ export class Creature {
 
   public id: number;
 
-  constructor(public name: string, public gold: number) {
+  constructor(public name: string, public team: number) {
     this.id = Creature.idCounter++; // fake unique ID
   }
 }

@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
-import { from, Observable, of, Subject, timer } from 'rxjs';
+import { from, interval, Observable, of, Subject, timer } from 'rxjs';
 import { Creature } from '../model/creature';
 import { GameState } from '../model/game-state';
 
 /*
  * Faked backend API - database table
  */
-const CREATURES = [
-  new Creature('Warrior', 5),
-  new Creature('Wizard', 39),
-  new Creature('Hunter', 25),
-  new Creature('Dwarf', 28),
+const CREATURES_TEAM1 = [
+  new Creature('Warrior', 1),
+  new Creature('Wizard', 1),
+  new Creature('Knight', 1),
+  new Creature('Vampire', 1),
+];
+
+const CREATURES_TEAM2 = [
+  new Creature('Bowman', 2),
+  new Creature('Priest', 2),
+  new Creature('Dwarf', 2),
+  new Creature('Skeleton', 2),
 ];
 
 /*
@@ -20,30 +27,66 @@ const CREATURES = [
   providedIn: 'root',
 })
 export class GameServerService {
-  creatures = CREATURES;
+  allCreatures = CREATURES_TEAM1.concat(CREATURES_TEAM2);
+  creatures = CREATURES_TEAM1;
   gameState = new GameState();
+  addedCreatures = 0;
 
   public creatureAddedEvent = new Subject<Creature>();
   public worldTimeTickEvent = new Subject<GameState>();
 
   constructor() {
-
     // Emit game world ticks
-    timer(1000, 1000).subscribe( () => {
-      this.gameState.worldTime++;
+    interval(1000).subscribe((n) => {
+      this.gameState.worldTime = n;
       this.worldTimeTickEvent.next(this.gameState);
     });
   }
 
-  // Using 'of': Will produce 1 emitted value of a whole array.
-  getCreatures(): Observable<Creature[]> {
-    return of(CREATURES);
+  // Someone added a creature, notify subscriber(s) to the creatureAddedEvent-subject
+  addCreature(): void {
+    if (this.addedCreatures < this.allCreatures.length) {
+      const newCreature = this.allCreatures[this.addedCreatures++];
+      this.creatures.push(newCreature);
+      this.creatureAddedEvent.next(newCreature);
+    }
   }
 
-  /* Using 'from': Will produce a sequence of emitted values, but ends with "complete" on the stream!
-  getCreatures(): Observable<Creature> {
-    return from(CREATURES);
-  }*/
+  // Using 'of': Will produce 1 emitted value of a whole array.
+  getCreatures(): Observable<Creature[]> {
+    return of(CREATURES_TEAM1);
+  }
+
+  // Using 'from': Will produce a sequence of emitted values, but ends with "complete" on the stream!
+  getCreaturesFrom(): Observable<Creature> {
+    return from(CREATURES_TEAM2);
+  }
+
+  // Produce a stream of Team 1 heroes with some delay, end with complete
+  getTeam1(): Observable<Creature> {
+    return new Observable<Creature>((subscriber) => {
+      timer(200, 500).subscribe((n) => {
+        if (n < CREATURES_TEAM1.length) {
+          subscriber.next(CREATURES_TEAM1[n]);
+        } else {
+          subscriber.complete();
+        }
+      });
+    });
+  }
+
+  // Produce a stream of Team 2 heroes with some delay, end with complete
+  getTeam2(): Observable<Creature> {
+    return new Observable<Creature>((subscriber) => {
+      timer(100, 700).subscribe((n) => {
+        if (n < CREATURES_TEAM1.length) {
+          subscriber.next(CREATURES_TEAM2[n]);
+        } else {
+          subscriber.complete();
+        }
+      });
+    });
+  }
 
   /*
    * Will produce a sequence of creatures, will never complete...
@@ -57,14 +100,19 @@ export class GameServerService {
     });
   }
 
-  // Someone added a creature, notify subscriber(s) to the creatureAddedEvent-subject
-  addCreature(creature: Creature): void {
-    this.creatures.push(creature);
-    this.creatureAddedEvent.next(creature);
+  getCreatureByName(name: string): Observable<Creature> {
+    return new Observable<Creature>((subscriber) => {
+      const creature = this.allCreatures.find((c) => c.name === name);
+      if (creature) {
+        subscriber.next(creature);
+        subscriber.complete();
+      } else {
+        subscriber.error();
+      }
+    });
   }
 
   togglePoison(): void {
     this.gameState.poison = !this.gameState.poison;
   }
-
 }
