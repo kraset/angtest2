@@ -58,7 +58,7 @@ export class GameServerService {
   }
 
   // Using 'from': Will produce a sequence of emitted values, but ends with "complete" on the stream!
-  getCreaturesFrom(): Observable<Creature> {
+  getCreatureFrom(): Observable<Creature> {
     return from(CREATURES_TEAM2);
   }
 
@@ -79,7 +79,7 @@ export class GameServerService {
   getTeam2(): Observable<Creature> {
     return new Observable<Creature>((subscriber) => {
       timer(100, 700).subscribe((n) => {
-        if (n < CREATURES_TEAM1.length) {
+        if (n < CREATURES_TEAM2.length) {
           subscriber.next(CREATURES_TEAM2[n]);
         } else {
           subscriber.complete();

@@ -46,7 +46,7 @@ export class GameClientComponent implements OnInit {
 
   // The observable will be created with from()
   runFrom(): void {
-    this.gameServerService.getCreaturesFrom().subscribe((creature) => {
+    this.gameServerService.getCreatureFrom().subscribe((creature) => {
       this.heroes.push(this.creatureToHero(creature));
       console.log(creature.name);
     });
