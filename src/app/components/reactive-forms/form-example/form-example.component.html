@@ -1,0 +1,71 @@
+<h3>Reactive Forms Examples</h3>
+
+<h5>Form Group: personFormGroup - Simple</h5>
+Values: {{ personFormGroup.value | json }} <br /><br />
+<form [formGroup]="personFormGroup">
+  <label for="name">Name: </label>
+  <input matInput type="text" formControlName="name" name="name" />
+
+  <label for="">Age: </label>
+  <input matInput type="number" formControlName="age" />
+
+  <label for="">Phone: </label>
+  <input matInput type="text" formControlName="phone" />
+</form>
+
+<hr />
+<h5>Form Group: personFormGroupNested - Nested complex phone number object</h5>
+Values: {{ personFormGroupNested.value | json }} <br /><br />
+<form [formGroup]="personFormGroupNested">
+  <label for="name">Name: </label>
+  <input matInput type="text" formControlName="name" name="name" />
+
+  <label for="">Age: </label>
+  <input matInput type="number" formControlName="age" />
+
+  <h6>Home phone (nested formGroupName="homePhone")</h6>
+  <div formGroupName="homePhone">
+    <label for="">Area Code: </label>
+    <input matInput type="text" formControlName="areaCode" />
+    <label for="">Number: </label>
+    <input matInput type="text" formControlName="number" />
+  </div>
+
+  <h6>Work phone (nested formGroupName="workPhone")</h6>
+  <div formGroupName="workPhone">
+    <label for="">Area Code: </label>
+    <input matInput type="text" formControlName="areaCode" />
+    <label for="">Number: </label>
+    <input matInput type="text" formControlName="number" />
+  </div>
+</form>
+
+<hr />
+
+<h5>
+  Form Group: personFormGroupWithArray - Array of nested phone number object, click to add new...
+</h5>
+Values: {{ personFormGroupWithArray.value | json }} <br /><br />
+<button (click)="onClickAddPhoneNumber()">Click to add new number</button> <br><br>
+
+<form [formGroup]="personFormGroupWithArray">
+  <label for="name">Name: </label>
+  <input matInput type="text" formControlName="name" name="name" />
+
+  <label for="">Age: </label>
+  <input matInput type="number" formControlName="age" />
+
+  <h6>Phone numbers as form-array</h6>
+
+  <div formArrayName="phones">
+    <div
+      *ngFor="let phone of getPhones().controls; let i = index"
+      [formGroupName]="i"
+    >
+      <label for="">Area Code: </label>
+      <input matInput type="text" formControlName="areaCode" />
+      <label for="">Number: </label>
+      <input matInput type="text" formControlName="number" />
+    </div>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  width: 30%;
+  flex-wrap: wrap;
+}
+
+label {
+  width: 30%;
+}
+
+input {
+  width: 60%;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}

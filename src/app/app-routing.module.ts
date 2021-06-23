@@ -7,6 +7,7 @@ import { DragStuffComponent } from './components/drag-stuff/drag-stuff.component
 import { FlexComponent } from './components/flex/flex.component';
 import { GameClientComponent } from './components/more-rxjs/game-client.component';
 import { PetStoreComponent } from './components/pet-store/pet-store.component';
+import { FormExampleComponent } from './components/reactive-forms/form-example/form-example.component';
 import { ResponsiveComponent } from './components/responsive/responsive.component';
 import { GrandParentComponent } from './components/subject/grand-parent.component';
 import { VerifyInputComponent } from './components/verify-input/verify-input.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
   { path: 'dragdrop', component: DragStuffComponent },
   { path: 'verify-input', component: VerifyInputComponent },
+  { path: 'form-example', component: FormExampleComponent },
 ];
 
 @NgModule({

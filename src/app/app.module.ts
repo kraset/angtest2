@@ -28,6 +28,8 @@ import { HeroComponent } from './shared/hero/hero.component';
 import { GameServerMockComponent } from './components/more-rxjs/server-mock/server-mock.component';
 import { VerifyInputComponent } from './components/verify-input/verify-input.component';
 import { TwoDigitDecimaNumberDirective } from './shared/two-decimal.directive';
+import { FormExampleComponent } from './components/reactive-forms/form-example/form-example.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 export function getBaseUrl(): string {
   return 'https://petstore.swagger.io/v2';
@@ -53,6 +55,7 @@ export function getBaseUrl(): string {
     GameServerMockComponent,
     VerifyInputComponent,
     TwoDigitDecimaNumberDirective,
+    FormExampleComponent,
   ],
   imports: [
     CommonModule,
@@ -65,7 +68,8 @@ export function getBaseUrl(): string {
     BrowserAnimationsModule,
     DragDropModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, // reactive forms
+    MatFormFieldModule, // reactive forms
   ],
   providers: [
     {
