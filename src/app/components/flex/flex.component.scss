@@ -127,3 +127,10 @@
 .flex-row-wrap :last-child {
     margin-right: 0;
 }
+
+.break-word {
+  border: 1px solid #000000;
+  display: flex;
+  width: 25%;
+  word-break:break-all;
+}
